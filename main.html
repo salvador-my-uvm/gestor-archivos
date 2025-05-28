@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Documentos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Barra de navegación lateral */
+        .sidebar {
+            width: 80px;
+            background-color: #2c3e50;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-icon {
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .nav-icon:hover {
+            background-color: #34495e;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 20px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        /* Panel de archivos */
+        .file-panel {
+            padding: 30px;
+            flex: 1;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .file-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .file-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .file-icon {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .file-name {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .file-details {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Utilidades */
+        .material-icons {
+            font-size: 28px;
+        }
+
+        .active {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="sidebar">
+        <a class="nav-icon active" href="main.html" >
+            <span class="material-icons">home</span>
+        </a>
+        <a class="nav-icon" href="documentos.html">
+            <span class="material-icons">folder</span>
+        </a>
+        <a class="nav-icon" href="usuarios.html">
+            <span class="material-icons">people</span>
+        </a>
+        <a class="nav-icon" href="configuracion.html">
+            <span class="material-icons">settings</span>
+        </a>
+        <a class="nav-icon" href="eliminar.html">
+            <span class="material-icons">delete</span>
+        </a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header-title">Gestor de archivos</h1>
+            <div class="header-actions" style="display: flex; flex-direction: row; align-items: center; gap: 16px;">
+                <button class="btn" style="display: flex; align-items: center; gap: 8px; border-radius: 50px; padding: 8px 16px;">
+                    <span class="material-icons" style="background: #e0e0e0; border-radius: 50%; padding: 6px; font-size: 24px; color: #2c3e50;">person</span>
+                    Usuario
+                </button>
+                <button class="btn" style="display: flex; align-items: center; gap: 8px; border-radius: 50px; padding: 8px 16px; background: none; border: none; cursor: pointer;"
+                    onclick="window.location.href='login.html'">
+                    <span class="material-icons" style="background: #e0e0e0; border-radius: 50%; padding: 6px; font-size: 24px; color: #2c3e50;">logout</span>
+                    Salir
+                </button>
+            </div>
+        </header>
+
+        <!-- Panel de archivos -->
+        <div class="file-panel">
+            <div class="file-grid">
+                <!-- Ejemplo de elementos -->
+                <div class="file-item" onclick="window.location.href='documentos.html'">
+                    <span class="material-icons file-icon">folder</span>
+                    <div class="file-name">Documentos</div>
+                    <div class="file-details">Mis Documentos</div>
+                </div>
+
+                <div class="file-item">
+                    <span class="material-icons file-icon">star</span>
+                    <div class="file-name">Favoritos</div>
+                    <div class="file-details">Documentos más vistos</div>
+                </div>
+
+                <div class="file-item">
+                    <span class="material-icons file-icon">description</span>
+                    <div class="file-name">Reportes</div>
+                    <div class="file-details">250.5 MB Utilizados</div>
+                </div>
+
+                <div class="file-item">
+                    <span class="material-icons file-icon">person</span>
+                    <div class="file-name">Usuarios</div>
+                    <div class="file-details">32 usuarios totales</div>
+                </div>
+
+                <div class="file-item">
+                    <span class="material-icons file-icon">group</span>
+                    <div class="file-name">Organización</div>
+                    <div class="file-details">Mapa organizacional</div>
+                </div>
+
+                <!-- Más elementos pueden agregarse aquí -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
