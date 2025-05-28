@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Documentos - Login</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .login-wrapper {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 90%;
+            min-height: 500px;
+        }
+
+        .form-section {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-section {
+            flex: 1;
+            background: url('img/login.jpg') center/cover;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .header {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 24px;
+        }
+
+        /* Estilos Material-UI para inputs */
+        .mui-input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .mui-input {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background-color: transparent;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .mui-input:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        .mui-label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: #999;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .mui-input:focus ~ .mui-label,
+        .mui-input:not(:placeholder-shown) ~ .mui-label {
+            top: -15px;
+            font-size: 12px;
+            color: #2196F3;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        @media (max-width: 768px) {
+            .login-wrapper {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .image-section {
+                order: -1;
+                height: 200px;
+                border-radius: 8px 8px 0 0;
+            }
+            
+            .form-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="form-section">
+            <h1 class="header">Gestor de Documentos</h1>
+            
+            <form>
+                <div class="mui-input-group">
+                    <input type="text" id="usuario" class="mui-input" placeholder=" ">
+                    <label for="usuario" class="mui-label">Usuario</label>
+                </div>
+                
+                <div class="mui-input-group">
+                    <input type="password" id="contrasena" class="mui-input" placeholder=" ">
+                    <label for="contrasena" class="mui-label">Contraseña</label>
+                </div>
+                
+                <button type="submit" onclick="event.preventDefault(); window.location.href='main.html';">INGRESAR</button>
+
+                <p>
+                    <a style="font-size: 0.75rem; color: #2196F3; text-decoration: underline; cursor: pointer;">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </p>
+
+            </form>
+        </div>
+
+        <div class="image-section"></div>
+    </div>
+</body>
+</html>
