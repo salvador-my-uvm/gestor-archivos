@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm /usr/share/nginx/html/*
 
 # Copia los archivos estáticos al directorio de nginx
-COPY configuracion.html documentos.html eliminar.html index.html main.html usuarios.html /usr/share/nginx/html/
+COPY configuracion.html documentos.html eliminar.html index.html main.html usuarios.html login.html /usr/share/nginx/html/
 COPY img/ /usr/share/nginx/html/img/
 
 # Expone el puerto 80
